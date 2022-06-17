@@ -10,13 +10,13 @@ public class StartCSS {
     WebDriver wd;
 
     @Test
-    public void startCssLocators(){
-        wd=new ChromeDriver();
+    public void startCssLocators() {
+        wd = new ChromeDriver();
         wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
 
-       WebElement el1 = wd.findElement(By.id("root"));
-       WebElement el2 = wd.findElement(By.tagName("a"));
-      List<WebElement> list = wd.findElements(By.tagName("a"));// --> 3 a
+        WebElement el1 = wd.findElement(By.id("root"));
+        WebElement el2 = wd.findElement(By.tagName("a"));
+        List<WebElement> list = wd.findElements(By.tagName("a"));// --> 3 a
         wd.findElements(By.className("container"));
         //wd.findElement(By.name("name"));
 
@@ -36,7 +36,7 @@ public class StartCSS {
         wd.findElements(By.cssSelector(".container"));
         //------------------------
         wd.findElements(By.cssSelector("[href='/home']"));
-        
+
 
     }
 }
