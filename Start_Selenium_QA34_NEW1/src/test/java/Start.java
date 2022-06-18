@@ -74,7 +74,7 @@ public class Start {
         passwordTextBox.sendKeys("Vvik" + int_random + "$");
 
         //click Registration button
-        WebElement loginButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
-        loginButton.click();
+        WebElement registrationButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
+        registrationButton.click();
     }
 }
