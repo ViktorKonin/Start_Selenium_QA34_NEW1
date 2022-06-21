@@ -27,15 +27,43 @@ public class StartCSS {
 
         //tagname--------------------------
         wd.findElements(By.cssSelector("div"));
+        wd.findElements(By.xpath("//div"));
+
         wd.findElements(By.cssSelector("a"));
+        wd.findElements(By.xpath("//a"));
+
         wd.findElements(By.cssSelector("input"));
+        wd.findElements(By.xpath("//input"));
+
         wd.findElements(By.cssSelector("button"));
+        wd.findElements(By.xpath("//button"));
+
         //id--->#
         wd.findElements(By.cssSelector("#root"));
+        wd.findElements(By.id("root"));
+        wd.findElements(By.xpath("//*[@id='root']"));
         //class----> .class
         wd.findElements(By.cssSelector(".container"));
+        wd.findElements(By.xpath("//*[@class='container']"));
         //------------------------
         wd.findElements(By.cssSelector("[href='/home']"));
+        wd.findElement(By.xpath("//*[@href='/home']"));
+
+
+        //attribute
+        wd.findElement(By.cssSelector("[placeholder='Email']"));
+        wd.findElement(By.xpath("//*@placeholder='Email'"));
+
+        //start with
+        wd.findElement(By.cssSelector("[placeholder='Email']"));
+        //start with "Em"
+        wd.findElement(By.cssSelector("[placeholder ^='Em']"));
+        wd.findElement(By.xpath("//*[starts-with(@placeholder,'Em')]"));
+        //end on "il"
+        wd.findElement(By.cssSelector("[placeholder $='il']"));
+        //contains -> "ai"
+        wd.findElement(By.cssSelector("[placeholder *='ai']"));
+        wd.findElement(By.xpath("//*[contains(@placeholder,'ei')]"));
 
 
     }

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.Random;
 
 public class Start {
@@ -62,19 +63,25 @@ public class Start {
         int int_random = rand.nextInt(upperbound);
 
         //fill valid email
-        WebElement emailTextBox = wd.findElement(By.cssSelector("div.login_login__3EHKB :first-child"));
+        //WebElement emailTextBox = wd.findElement(By.cssSelector("div.login_login__3EHKB :first-child"));
+        WebElement emailTextBox = wd.findElement(By.cssSelector("[placeholder='Email']"));
         emailTextBox.click();
         emailTextBox.clear();
         emailTextBox.sendKeys("viktor" + int_random + "@gmail.com");
 
         //fill valid password
-        WebElement passwordTextBox = wd.findElement(By.cssSelector("div.login_login__3EHKB :nth-child(2)"));
+        //WebElement passwordTextBox = wd.findElement(By.cssSelector("div.login_login__3EHKB :nth-child(2)"));
+        WebElement passwordTextBox = wd.findElement(By.cssSelector("[placeholder='Password']"));
         passwordTextBox.click();
         passwordTextBox.clear();
         passwordTextBox.sendKeys("Vvik" + int_random + "$");
 
         //click Registration button
-        WebElement registrationButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
+        //WebElement registrationButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
+        // WebElement registrationButton = wd.findElement(By.cssSelector("button:last-child"));
+        List<WebElement> list = wd.findElements(By.cssSelector("button"));
+        WebElement registrationButton = list.get(1);
         registrationButton.click();
+
     }
 }
